@@ -4,8 +4,8 @@ Carné: FI24041633
 IDE utilizado: NetBeans JDK 21  
 
  Referencias
-- ChatGPT: [Enlace a la sesión utilizada](https://chatgpt.com/share/68ed5f9b-c0b0-8001-bc2c-7a32aa0ffad2)  
-- Tutorial de YouTube: [Explicación de pilas en Java](https://youtu.be/eHjbvgw4hsI)  
+- ChatGPT: https://chatgpt.com/share/68ed5f9b-c0b0-8001-bc2c-7a32aa0ffad2
+- Tutorial de YouTube de como se leen archivos: https://youtu.be/eHjbvgw4hsI
 
 Alternativa a una pila
 Si no se empleara una pila, sería posible invertir el contenido de un archivo al asignar un número a cada carácter conforme se va leyendo el archivo (por ejemplo, su posición en el mismo). Después se podria recorrer la lista de caracteres en orden de ultimo al primero, a partir de ese número, comenzando por el carácter con el número más alto y siguiendo hasta llegar al primero. Esto hace posible simular el efecto de "invertir" el archivo sin requerir la utilización de un stack, que seria usando indices.
