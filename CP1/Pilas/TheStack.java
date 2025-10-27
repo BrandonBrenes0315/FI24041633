@@ -69,4 +69,4 @@ public class TheStack<Type> implements TheStackInterface<Type> {
         System.out.println("   ↳ size() → " + stack.size());
         System.out.println("   ↳ empty() → " + stack.empty());
     }
-}
+} // https://chatgpt.com/share/68ff1063-a6b4-8001-b983-7e8948294476

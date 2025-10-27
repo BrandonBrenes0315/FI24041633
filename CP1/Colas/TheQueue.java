@@ -79,4 +79,4 @@ public class TheQueue<Type> implements TheQueueInterface<Type> {
         System.out.println("   ↳ getSize() → " + queue.getSize());
         System.out.println("   ↳ isEmpty() → " + queue.isEmpty());
     }
-}
+} // https://chatgpt.com/share/68ff1063-a6b4-8001-b983-7e8948294476

@@ -59,4 +59,4 @@ public class Numbers {
             System.out.println(" ↳ iterative(" + z + ") ≈ " + iterative(z));
         }
     }
-}
+} // https://chatgpt.com/share/68ff1063-a6b4-8001-b983-7e8948294476
