@@ -1,22 +1,20 @@
 public class QueueNode {
+    private int value;
+    private QueueNode next;
 
-    private int _index;
-    private QueueNode _next;
-
-    public QueueNode(int index) {
-        _index = index;
-        _next = null;
+    public QueueNode(int value) {
+        this.value = value;
     }
 
-    public int getIndex() {
-        return _index;
+    public int getValue() {
+        return value;
     }
 
     public QueueNode getNext() {
-        return _next;
+        return next;
     }
 
     public void setNext(QueueNode next) {
-        _next = next;
+        this.next = next;
     }
 }

@@ -1,5 +1,4 @@
 public class StackNode {
-
     private String _word;
     private StackNode _next;
 
@@ -9,6 +8,10 @@ public class StackNode {
     }
 
     public String getWord() {
+        return _word;
+    }
+
+    public String getValue() {
         return _word;
     }
 

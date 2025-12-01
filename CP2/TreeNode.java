@@ -1,5 +1,4 @@
 public class TreeNode {
-
     private double _tf;
     private CustomStack _words;
     private TreeNode _left;
@@ -20,8 +19,8 @@ public class TreeNode {
         return _tf;
     }
 
-    public String getWords() {
-        return _words.getWords();
+    public CustomStack getWords() {
+        return _words;
     }
 
     public TreeNode getLeft() {
