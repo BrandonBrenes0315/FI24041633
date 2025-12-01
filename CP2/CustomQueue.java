@@ -9,13 +9,24 @@ public class CustomQueue {
     public void enqueue(int index) {
         var node = new QueueNode(index);
 
-        // Actualizar
+        if (_head == null) { //se actualiza
+            _head = node;
+        } else {
+            QueueNode temp = _head;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(node);
+        }
     }
 
     public int dequeue() {
         var index = -1;
 
-        // Actualizar
+        if (_head != null) { //se actualiza
+            index = _head.getValue();
+            _head = _head.getNext();
+        }
 
         return index;
     }
@@ -23,7 +34,11 @@ public class CustomQueue {
     public int getSize() {
         var size = 0;
 
-        // Actualizar
+        QueueNode temp = _head; //se actuazliza
+        while (temp != null) {
+            size++;
+            temp = temp.getNext();
+        }
 
         return size;
     }
