@@ -1,0 +1,136 @@
+# Caso Práctico 2 – SC-304 (Estructuras de Datos)
+
+## Estudiante
+**Nombre:** Brandon Brenes  
+**Curso:** SC-304 – Estructuras de Datos  
+**Profesor:** Luis Andrés Rojas Matey  
+
+#Cambios realizados
+Para que el proyecto compilara y ejecutara correctamente, se realizaron las siguientes modificaciones mínimas ya que de otra forma no logre que el codigo funcionara
+Estas adiciones fueron indicadas por copilot indicamendome que eran necesarias para que funcionara, lamentablemente perdi el chat donde me lo dijo porque no hice 
+signin pero tengo un txt donde habia copiado lo que me indico, este txt esta al final de este README,
+
+Los cambios son los siguientes:
+- **QueueNode.java**: se agregó el atributo `value`, constructor y método `getValue()`.
+- **StackNode.java**: se agregó el método `getValue()` para devolver la palabra almacenada.
+- **TreeNode.java**: se ajustó el método `getWords()` para devolver la pila (`CustomStack`) en lugar de un `String`.
+- **CustomQueue.java / CustomStack.java / CustomTree.java / CustomGraph.java**: se completaron las lógicas de `enqueue`, `dequeue`, `push`, `pop`, `insert`, y `addEdge` según las indicaciones del profesor.
+
+---
+Ejecución
+Compilar todos los archivos:
+```bash
+javac -encoding UTF-8 *.java
+
+public void setRight(TreeNode right) { _right = right; } }
+Perfecto Brandon 👌, te marco exactamente qué agregar y dónde para que compile sin errores. Te pongo notas tipo “aquí agregué / aquí termina” para que lo veas claro.
+
+🔹 QueueNode.java (para que funcione con getValue())
+java
+public class QueueNode {
+    private int value;        // aquí agregué: campo para guardar el índice
+    private QueueNode next;
+
+    public QueueNode(int value) {   // aquí agregué: constructor que recibe int
+        this.value = value;
+    } // aquí termina
+
+    public int getValue() {         // aquí agregué: método que devuelve el valor
+        return value;
+    } // aquí termina
+
+    public QueueNode getNext() {
+        return next;
+    }
+
+    public void setNext(QueueNode next) {
+        this.next = next;
+    }
+}
+🔹 StackNode.java (para que funcione con getValue())
+Tu versión solo tenía getWord(). El código usa _head.getValue(), así que necesitas un método getValue() que devuelva la palabra.
+
+java
+public class StackNode {
+    private String _word;
+    private StackNode _next;
+
+    public StackNode(String word) {
+        _word = word;
+        _next = null;
+    }
+
+    public String getWord() {
+        return _word;
+    }
+
+    // aquí agregué: método getValue() para que coincida con CustomStack
+    public String getValue() {
+        return _word;
+    } 
+    // aquí termina
+
+    public StackNode getNext() {
+        return _next;
+    }
+
+    public void setNext(StackNode next) {
+        _next = next;
+    }
+}
+🔹 TreeNode.java (para que getWords().push(word) funcione)
+El error era que getWords() devolvía un String. Debe devolver la pila (CustomStack) para poder hacer .push(word).
+
+java
+public class TreeNode {
+    private double _tf;
+    private CustomStack _words;
+    private TreeNode _left;
+    private TreeNode _right;
+
+    public TreeNode(double tf) {
+        _tf = tf;
+        _words = new CustomStack();
+        _left = null;
+        _right = null;
+    }
+
+    public void addWord(String word) {
+        _words.push(word);
+    }
+
+    public double getTf() {
+        return _tf;
+    }
+
+    // aquí borré: antes devolvía String con _words.getWords()
+    // aquí agregué: ahora devuelve el CustomStack completo
+    public CustomStack getWords() {
+        return _words;
+    }
+    // aquí termina
+
+    public TreeNode getLeft() {
+        return _left;
+    }
+
+    public TreeNode getRight() {
+        return _right;
+    }
+
+    public void setLeft(TreeNode left) {
+        _left = left;
+    }
+
+    public void setRight(TreeNode right) {
+        _right = right;
+    }
+}
+✅ Resumen de cambios
+QueueNode → agregué campo value, constructor con int, y método getValue().
+
+StackNode → agregué método getValue() que devuelve _word.
+
+TreeNode → cambié getWords() para que devuelva CustomStack en lugar de String.
+
+👉 Con estos cambios, tu compilación debería pasar y generar Main.class. Haz de nuevo:
